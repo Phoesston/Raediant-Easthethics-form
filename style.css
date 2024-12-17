@@ -1,0 +1,222 @@
+:root {
+    --background-gradient-start: #ffe6e6;
+    --background-gradient-end: #ffccf2;
+    --primary-color: #e63973;
+    --secondary-color: #ff99cc;
+    --text-color: #333;
+    --subtext-color: #555;
+    --form-bg-color: #fdf5f7;
+    --border-color: #ccc;
+}
+
+
+body, html {
+    margin: 0;
+    padding: 0;
+    font-family: 'Arial', sans-serif;
+    background: linear-gradient(to bottom, var(--background-gradient-start), var(--background-gradient-end));
+    color: var(--text-color);
+}
+
+
+.main {
+    display: flex;
+    flex-direction: row;
+    height: 100vh;
+}
+
+
+.left-side {
+    flex: 1;
+    background-image: url(./images/kimia-kazemi-u93nTfWqR9w-unsplash.jpg);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    display: flex;
+    flex-direction: column; /* Aligns content vertically */
+    justify-content: center; /* Centers vertically */
+    align-items: center; /* Centers horizontally */
+    padding: 0px;
+    position: relative;
+}
+
+.left-side .logo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%; 
+    background-color: rgba(0, 0, 0, 0.6);
+    padding: 0px;
+    margin: 0;
+    border-radius: 10px; 
+}
+
+.left-side .logo img {
+    width: 80%; 
+    height: auto;
+    border-radius: 10px; 
+    display: block;
+    object-fit: cover; 
+}
+
+
+
+.left-side .bottom-text {
+    font-size: 0.9rem;
+    color: rgba(255, 255, 255, 0.7);
+    font-family: 'Arial', sans-serif;
+    line-height: 1.5;
+    position: absolute; /* Positions it at the bottom of the parent */
+    bottom: 10px; /* Space from the bottom of the container */
+    left: 50%;
+    transform: translateX(-50%); /* Centers the text horizontally */
+    margin: 0;
+}
+
+.left-side .bottom-text a {
+    color: var(--primary-color);
+    font-weight: bold;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.left-side .bottom-text a:hover {
+    color: #ff66b2;
+    text-decoration: underline;
+}
+
+.right-side {
+    flex: 2;
+    padding: 40px;
+    background: #ffffff;
+    overflow-y: auto;
+}
+
+.right-side .text {
+    margin-bottom: 30px; /* Increased space between text and next section */
+    font-size: 1.15rem; /* Slightly larger font size for readability */
+    line-height: 1.8; /* Improved line height for better spacing */
+    color: var(--subtext-color);
+    font-family: 'Helvetica', sans-serif; /* Smooth sans-serif font for modern feel */
+    text-align: justify; /* Justify the text for a clean look */
+    letter-spacing: 0.5px; /* Adds slight letter-spacing for readability */
+}
+
+.right-side .remote-text {
+    font-style: italic;
+    font-weight: bold;
+    color: var(--primary-color);
+    font-size: 1.2rem; /* Slightly larger size to make it stand out */
+    margin-top: 10px; /* Adds space between remote-text and other text */
+    text-transform: uppercase; /* Make it stand out with capitalized text */
+    letter-spacing: 1px; /* Increased letter-spacing for impact */
+    font-family: 'Georgia', serif; /* Serif font for an elegant touch */
+}
+
+
+form {
+    background-color: var(--form-bg-color);
+    border: 2px solid var(--secondary-color);
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 800px; /* Restrict the form width */
+    margin: 0 auto; /* Center the form horizontally */
+    overflow: hidden; /* Prevent overflow */
+    box-sizing: border-box;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* Creates two equal columns */
+    gap: 20px; /* Space between columns */
+}
+
+.form-title {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: var(--primary-color);
+    margin-bottom: 20px;
+    text-align: center;
+    grid-column: span 2; /* Makes the title span both columns */
+}
+
+
+.input {
+    display: flex;
+    flex-direction: column;
+}
+
+.input label {
+    display: block;
+    font-size: 1rem;
+    margin-bottom: 5px;
+    color: var(--text-color);
+}
+
+.input input {
+    width: 100%;
+    padding: 10px;
+    font-size: 1rem;
+    border: 1px solid var(--border-color);
+    border-radius: 5px;
+    transition: border 0.3s ease;
+    box-sizing: border-box;
+}
+
+.input input:focus {
+    border-color: var(--primary-color);
+    outline: none;
+}
+
+
+.form-button button {
+    width: 100%;
+    padding: 10px;
+    font-size: 1rem;
+    font-weight: bold;
+    background-color: var(--primary-color);
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.form-button button:hover {
+    background-color: #cc3366;
+}
+
+
+.log-in {
+    margin-top: 20px;
+    text-align: center;
+}
+
+.log-in a {
+    text-decoration: none;
+    color: var(--primary-color);
+    font-weight: bold;
+}
+
+.log-in a:hover {
+    text-decoration: underline;
+}
+
+
+@media (max-width: 768px) {
+    .main {
+        flex-direction: column;
+    }
+
+    .left-side {
+        height: 30%;
+    }
+
+    .right-side {
+        flex: 1;
+        padding: 20px;
+    }
+
+    form {
+        max-width: 90%; /* Make the form more compact on smaller screens */
+    }
+}
