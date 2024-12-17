@@ -195,6 +195,7 @@ form {
     text-decoration: none;
     color: var(--primary-color);
     font-weight: bold;
+    transition: color 0.3s ease;
 }
 
 .log-in a:hover {
